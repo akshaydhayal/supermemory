@@ -1,15 +1,17 @@
-import Button from "./components/Button"
-import { Input } from "./components/Input";
-import SideBar from "./components/SideBar"
-import { Send } from "./icons/Send"
-import Signin from "./pages/SigninPage";
-
+import HomePage from "./pages/HomePage";
+import SigninPage from "./pages/SigninPage";
+import { BrowserRouter,Route, Routes } from "react-router-dom";
+import SignupPage from "./pages/SignupPage";
 function App() {
 
   return (
-    <div className="bg-[#2c3438] h-screen  w-screen ">
-      <Signin/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SigninPage/>}/>
+        <Route path="/signup" element={<SignupPage/>}/>
+        <Route path="/home" element={<HomePage/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
